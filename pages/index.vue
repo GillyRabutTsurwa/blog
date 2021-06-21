@@ -6,11 +6,11 @@
         nuxt-content-blog-app
       </h1>
       <div class="links">
-        <NuxtLink to="blog/first-blog-post" target="_blank" rel="noopener noreferrer" class="button--green">
-          First Blog
-        </NuxtLink>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey">
-          GitHub
+        <a href="https://github.com/nuxtlabs/demo-blog-nuxt-content" target="_blank" rel="noopener noreferrer" class="button--grey">
+          GitHub Repo
+        </a>
+        <a href="https://nuxtjs.org/blog/creating-blog-with-nuxt-content" target="_blank" rel="noopener noreferrer" class="button--grey">
+          Debbie's Blog
         </a>
       </div>
     </div>
