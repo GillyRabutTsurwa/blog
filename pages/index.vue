@@ -6,10 +6,13 @@
         nuxt-content-blog-app
       </h1>
       <div class="links">
-        <NuxtLink to="blog/first-blog-post" target="_blank" rel="noopener noreferrer" class="button--green">
-          First Blog
+        <NuxtLink to="blogs/first-blog-post" rel="noopener noreferrer" class="button--green">
+          All Blogs
         </NuxtLink>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" rel="noopener noreferrer" class="button--grey">
+        <NuxtLink to="authours/second-blog-post" rel="noopener noreferrer" class="button--green">
+          Meet the Authours
+        </NuxtLink>
+        <a href="https://github.com/nuxt/nuxt.js" rel="noopener noreferrer" class="button--grey">
           GitHub
         </a>
       </div>
@@ -22,11 +25,11 @@ export default {};
 </script>
 
 <style>
-/* Sample `apply` at-rules with Tailwind CSS
+/* Sample `apply` at-rules with Tailwind CSS */
 .container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
+  @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
-*/
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
