@@ -1,0 +1,13 @@
+.nuxt-content-highlight {
+  position: relative;
+}
+
+.nuxt-content-highlight .filename {
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
+}
+
+pre[class*="language-"] {
+  background-color: #fdcccc;
+}
