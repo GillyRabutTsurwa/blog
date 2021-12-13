@@ -3,7 +3,7 @@
     <h1 class="blogs-page-title">Blog Posts</h1>
     <ul class="blogs">
       <li v-for="currentArticle of articles" v-bind:key="currentArticle.slug" class="blogs__list">
-        <NuxtLink v-bind:to="`/blogs/${currentArticle.slug}`" class="blogs__list--link">
+        <NuxtLink v-bind:to="`/tech/blogs/${currentArticle.slug}`" class="blogs__list--link">
           <img v-bind:src="require(`~/assets/img/${currentArticle.img}`)" v-bind:alt="currentArticle.title" class="blogs__list--img">
           <div class="blogs__list--link-data">
             <h2 class="font-bold">{{currentArticle.title}}</h2>
@@ -18,10 +18,11 @@
 
 <script>
 export default {
+  name: "TechBlogsPage",
   async asyncData(context) {
     const { $content } = context;
 
-    const articles = await $content("articles").only(["title", "description", "img", "slug", "authour"]).sortBy("createdAt", "asc").fetch();
+    const articles = await $content("articles/tech").only(["title", "description", "img", "slug", "authour"]).sortBy("createdAt", "asc").fetch();
 
     return {
       articles: articles,

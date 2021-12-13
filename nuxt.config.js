@@ -10,7 +10,19 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href: "https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css"
+      }
+    ],
+    script: [
+      {
+        src: "https://kit.fontawesome.com/7a26a17053.js",
+        crossorigin: "anonymous"
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

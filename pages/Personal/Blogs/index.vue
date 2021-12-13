@@ -1,15 +1,14 @@
 <template>
-  <!-- TODO: apres avoir copié ce code du fichier blog, tout changer pour reflechir la page d'auteurs: classes, code, tout -->
   <div class="blogs-page-container">
     <h1 class="blogs-page-title">Blog Posts</h1>
     <ul class="blogs">
-      <li v-for="currentAuthour of authours" v-bind:key="currentAuthour.slug" class="blogs__list">
-        <NuxtLink v-bind:to="`${currentAuthour.slug}`" class="blogs__list--link">
-          <img v-bind:src="require(`~/assets/img/${currentAuthour.img}`)" v-bind:alt="currentAuthour.title" class="blogs__list--img">
+      <li v-for="currentArticle of articles" v-bind:key="currentArticle.slug" class="blogs__list">
+        <NuxtLink v-bind:to="`/personal/blogs/${currentArticle.slug}`" class="blogs__list--link">
+          <img v-bind:src="require(`~/assets/img/${currentArticle.img}`)" v-bind:alt="currentArticle.title" class="blogs__list--img">
           <div class="blogs__list--link-data">
-            <h2 class="font-bold">{{currentAuthour.title}}</h2>
-            <p>by {{currentAuthour.authour.name}}</p>
-            <p class="font-bold text-gray-600 text-sm">{{currentAuthour.description}}</p>
+            <h2 class="font-bold">{{currentArticle.title}}</h2>
+            <p>by {{currentArticle.authour.name}}</p>
+            <p class="font-bold text-gray-600 text-sm">{{currentArticle.description}}</p>
           </div>
         </NuxtLink>
       </li>
@@ -19,19 +18,20 @@
 
 <script>
 export default {
+  name: "PersonalBlogsPage",
   async asyncData(context) {
     const { $content } = context;
-
-    const authours = await $content("articles").only(["authour"]).fetch();
+    const articles = await $content("articles/personal").only(["title", "description", "img", "slug", "authour"]).sortBy("createdAt", "asc").fetch();
+    console.log(articles);
 
     return {
-      authours: authours,
+      articles: articles,
     };
   },
 };
 </script>
 
-<style>
+<style scoped>
 .blogs-page-container {
   margin: 3rem;
   padding: 3rem;

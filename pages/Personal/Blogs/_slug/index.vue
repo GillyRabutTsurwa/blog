@@ -1,13 +1,5 @@
 <template>
   <div>
-    <!-- <nav>
-      <ul>
-        <li v-for="currentArticleLink of article.toc" v-bind:key="currentArticleLink.id">
-          <NuxtLink v-bind:to="`#${currentArticleLink.id}`" v-bind:class="{'py-2': currentArticleLink.depth === 2, 'ml-2 pb-2': currentArticleLink.depth === 3}">{{currentArticleLink.text}}</NuxtLink>
-        </li>
-      </ul>
-    </nav> -->
-
     <article class="blog-container">
       <div class="blog-img-container">
         <img v-bind:src="require(`~/assets/img/${article.img}`)" alt="article.alt">
@@ -32,26 +24,24 @@
         <!-- desormais, je vais l'écrire ainsi pour garder le meme style que j'utilise pour les composants en general -->
         <NuxtContent v-bind:document="article" />
 
-        <Authour v-bind:authourProp="article.authour" />
+        <!-- <Authour v-bind:authourProp="article.authour" /> -->
+        <!-- <Authour v-bind:name="article.authour.name" v-bind:bio="article.authour.bio" v-bind:imgSrc="article.authour.img" /> -->
+        <!-- <Authour v-bind:authour="article.authour" /> -->
         <PrevNext v-bind:prev="prev" v-bind:next="next" class="prev-n-next"></PrevNext>
       </div>
-
     </article>
-
-    <!-- je vais le remettre plus tard -->
-
   </div>
-
 </template>
 
 <script>
 export default {
+  //   name: "BlogPageSingle",
   async asyncData(context) {
     // NOTE: i prefer to destructure here, below than in the function argument, ce m'est plus clair
     const { $content, params } = context;
     console.log(params);
     // params.slug must match folder name in markdown file. this is the connexion. otherwise there will be an error
-    const article = await $content("articles", params.slug).fetch();
+    const article = await $content("articles/personal", params.slug).fetch();
     console.log(article);
 
     /**
@@ -63,7 +53,7 @@ export default {
      * also, i'm putting in its own variable for now, as the console.log() helps understanding what is going on
      * for production i will do it like I've done it above
      */
-    const prevAndNextArticles = $content("articles").only(["title", "slug"]).sortBy("createdAt", "asc").surround(params.slug).fetch();
+    const prevAndNextArticles = $content("articles/personal").only(["title", "slug"]).sortBy("createdAt", "asc").surround(params.slug).fetch();
     console.log(prevAndNextArticles); // without await this return a Promise, but you can still see the value in the console upon inspeccion
 
     //
@@ -93,6 +83,7 @@ export default {
       return new Date(currentDate).toLocaleDateString("en-GB", options);
     },
     toggleToc() {
+      // Toc = Table of contents
       this.isTocToggled = !this.isTocToggled;
     },
   },

@@ -1,8 +1,29 @@
 <template>
   <div>
-    <Nuxt />
+    <!-- je vais enlever la verficication isBlogReleased quand le blog est pret pour deployer officiellement -->
+    <Navigation v-if="$nuxt.$route.path === '/' && isBlogReleased" />
+    <Modal v-if="!isBlogReleased" />
+    <Nuxt v-else-if="isBlogReleased" />
   </div>
 </template>
+
+<script>
+import Modal from "~/components/Modal.vue";
+export default {
+  components: { Modal },
+  data() {
+    return {
+      // changer cette valeur pour afficher et cacher le modal countdown
+      // je vais mettre la valeur false en le deployant sur le web
+      // et je vais changer la valeur à true pendant developpement
+      isBlogReleased: false,
+    };
+  },
+  created() {
+    console.log(this.$nuxt.$route.path);
+  },
+};
+</script>
 
 <style>
 *,
@@ -14,7 +35,7 @@
 }
 
 html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: Alegreya Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 62.5%;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -55,5 +76,39 @@ body {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.introduction-title {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.introduction-title.tech {
+  background-image: linear-gradient(to bottom right, #1a2934, #618299);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.introduction-paragraph {
+  margin: 0 0 1.5rem 3rem;
+  padding-left: 2rem;
+  border-left: 0.25rem solid transparent;
+  transition: border-left 0.5s ease-in;
+}
+
+.introduction-paragraph:not(:nth-of-type(2)):hover {
+  border-left: 0.25rem solid #1a2934;
+}
+
+.introduction-links {
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.introduction-links a {
+  margin: 0 1.5rem;
 }
 </style>
