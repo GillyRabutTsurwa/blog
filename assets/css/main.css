@@ -8,6 +8,7 @@
   margin-right: 1rem;
 }
 
+/* je trouvé cette selecteur en la cherchant dans l'especteur et grâce a l'aide de la documentation de Debbie pour nuxt-content */
 pre[class*="language-"] {
-  background-color: #fdcccc;
+  background-color: #dddcdc;
 }

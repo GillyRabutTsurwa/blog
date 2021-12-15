@@ -16,7 +16,8 @@ export default {
       // changer cette valeur pour afficher et cacher le modal countdown
       // je vais mettre la valeur false en le deployant sur le web
       // et je vais changer la valeur à true pendant developpement
-      isBlogReleased: false,
+      // dans le branche develop, cette valeur doit toujour etre true
+      isBlogReleased: true,
     };
   },
   created() {
@@ -47,6 +48,7 @@ html {
 
 body {
   font-size: 1.6rem;
+  background-color: #efeceb;
 }
 
 .button--green {

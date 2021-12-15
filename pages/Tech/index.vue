@@ -11,7 +11,7 @@
     <p class="introduction-paragraph">In any case, If you are still reading this, I want to thank you for reading to the end on hope you enjoy and/or learn a thing or two from my writings</p>
 
     <div class="introduction-links">
-      <NuxtLink class="button--grey" to="/tech/blogs">All Tech Blogs</NuxtLink>
+      <NuxtLink class="button--grey" to="/tech/posts">All Tech Blogs</NuxtLink>
       <NuxtLink class="button--grey" to="/personal">Personal Page</NuxtLink>
       <NuxtLink class="button--grey" to="/">Home</NuxtLink>
     </div>

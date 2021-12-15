@@ -39,7 +39,7 @@ This is some more info
 
 <!-- ============================================================== -->
 
-<!-- les bloques de code ne marche PAS si on les mets à la fin du fichier -->
+<!-- les bloques de code ne marche PAS lorsque on les mets à la fin du fichier -->
 <!-- but it works: PASS. come back and style later -->
 ```js [nuxt.config.js]
 export default {
