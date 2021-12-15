@@ -124,7 +124,8 @@ export default {
   /* right: 3.5rem; */
   transform: translateX(50%);
   right: 50%;
-  background-image: linear-gradient(to top right, #1a2934, rgba(26, 41, 52, 0.870588));
+  /* background-image: linear-gradient(to top right, #1a2934, rgba(26, 41, 52, 0.870588)); */
+  background-image: linear-gradient(to top right, rgb(57, 42, 45), rgba(67, 51, 54, 0.877));
   z-index: 1000;
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   opacity: 0;

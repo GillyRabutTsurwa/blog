@@ -6,6 +6,9 @@
       </div>
 
       <div class="blog-content">
+        <NuxtLink to="/tech/posts" class="link-back">
+          <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        </NuxtLink>
         <h2 class="blog-content__title">{{article.title}}</h2>
         <p class="blog-content__description">{{article.description}}</p>
         <p class="blog-content__date">Post Created: {{formatDate(article.createdAt)}} (Updated on {{formatDate(article.updatedAt)}})</p>
@@ -35,13 +38,13 @@
 
 <script>
 export default {
-  //   name: "BlogPageSingle",
+  name: "BlogPageSingle",
   async asyncData(context) {
     // NOTE: i prefer to destructure here, below than in the function argument, ce m'est plus clair
     const { $content, params } = context;
     console.log(params);
     // params.slug must match folder name in markdown file. this is the connexion. otherwise there will be an error
-    const article = await $content("articles/personal", params.slug).fetch();
+    const article = await $content("articles/tech", params.slug).fetch();
     console.log(article);
 
     /**
@@ -53,7 +56,7 @@ export default {
      * also, i'm putting in its own variable for now, as the console.log() helps understanding what is going on
      * for production i will do it like I've done it above
      */
-    const prevAndNextArticles = $content("articles/personal").only(["title", "slug"]).sortBy("createdAt", "asc").surround(params.slug).fetch();
+    const prevAndNextArticles = $content("articles/tech").only(["title", "slug"]).sortBy("createdAt", "asc").surround(params.slug).fetch();
     console.log(prevAndNextArticles); // without await this return a Promise, but you can still see the value in the console upon inspeccion
 
     //
@@ -124,6 +127,7 @@ export default {
 }
 
 .blog-content {
+  position: relative;
 }
 
 .blog-content__title {
@@ -184,7 +188,7 @@ export default {
   margin-bottom: 2rem;
 }
 
-.icon.icon-link {
+/* .icon.icon-link {
   display: inline-block;
   width: 1.5rem;
   height: 1.5rem;
@@ -193,7 +197,7 @@ export default {
   background-size: 1.5rem 1.5rem;
 
   margin-right: 1rem;
-}
+} */
 
 .prev-n-next {
   margin: 1.5rem 2rem;
@@ -214,5 +218,12 @@ export default {
   right: 0;
   color: pink;
   background-color: teal;
+}
+
+/* TESTING */
+.link-back {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
 }
 </style>

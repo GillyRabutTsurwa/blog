@@ -1,19 +1,19 @@
 <template>
   <div class="container">
     <div class="personal">
-      <div class="personal-img">
+      <div class="personal__img">
         <img v-bind:src="require(`~/assets/img/gilbert-personal.jpg`)" alt="">
       </div>
-      <NuxtLink to="/personal">
-        <span>Personal</span>
+      <NuxtLink to="/personal" class="personal__link">
+        <span class="personal__link--text">Personal</span>
       </NuxtLink>
     </div>
     <div class="tech">
-      <div class="tech-img">
+      <div class="tech__img">
         <img v-bind:src="require(`~/assets/img/gilbert-professional.jpg`)" alt="">
       </div>
-      <NuxtLink to="/tech">
-        <span>Tech</span>
+      <NuxtLink to="/tech" class="tech__link">
+        <span class="tech__link--text">Tech</span>
       </NuxtLink>
     </div>
   </div>
@@ -51,8 +51,8 @@ export default {
 }
 
 /* same as .personal a & .tech a */
-.personal a,
-.tech a {
+.personal__link,
+.tech__link {
   position: absolute;
   top: 0;
   left: 0;
@@ -78,13 +78,13 @@ export default {
   grid-column: 2 / 3;
 }
 
-.personal:hover .personal-img,
-.tech:hover .tech-img {
+.personal:hover .personal__img,
+.tech:hover .tech__img {
   filter: blur(0);
 }
 
-.personal:hover a,
-.tech:hover a {
+.personal:hover .personal__link,
+.tech:hover .tech__link {
   opacity: 1;
 }
 
@@ -93,8 +93,8 @@ export default {
   filter: blur(0);
 } */
 
-.personal-img,
-.tech-img {
+.personal__img,
+.tech__img {
   width: 100%;
   height: 100%;
 
@@ -105,20 +105,24 @@ export default {
   transition: all 0.5s ease;
 }
 
-.personal-img img,
-.tech-img img {
+.personal__img img,
+.tech__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-a span {
+.personal__link--text,
+.tech__link--text {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 0rem;
+  width: 100%;
+  text-align: center;
 
   font-size: 4rem;
+  font-weight: bold;
   padding: 3rem 1.5rem;
-  background-color: rgb(31, 19, 21);
+  background-color: rgba(31, 19, 21, 0.6);
   color: rgb(197, 197, 199);
 }
 

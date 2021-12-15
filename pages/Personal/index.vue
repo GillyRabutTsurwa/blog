@@ -10,7 +10,7 @@
     <p class="introduction-paragraph">Anyways, enough waffling. Take a look at my blogs. Or, if you want to cross over to my tech blogs, consult the links below.</p>
 
     <div class="introduction-links">
-      <NuxtLink class="button--grey" to="/personal/blogs">All Pesronal Blogs</NuxtLink>
+      <NuxtLink class="button--grey" to="/personal/posts">All Pesronal Blogs</NuxtLink>
       <NuxtLink class="button--grey" to="/tech">Tech Page</NuxtLink>
       <NuxtLink class="button--grey" to="/">Home</NuxtLink>
     </div>
