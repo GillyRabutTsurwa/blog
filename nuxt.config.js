@@ -29,7 +29,8 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  // NOTE: attempting to add google tag manager
+  plugins: [{ src: "~/plugins/vue-gtag" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
