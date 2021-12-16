@@ -17,7 +17,7 @@ export default {
       // je vais mettre la valeur false en le deployant sur le web
       // et je vais changer la valeur à true pendant developpement
       // dans le branche develop, cette valeur doit toujour etre true
-      isBlogReleased: false,
+      isBlogReleased: true,
     };
   },
   created() {
