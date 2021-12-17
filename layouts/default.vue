@@ -14,10 +14,10 @@ export default {
   data() {
     return {
       // changer cette valeur pour afficher et cacher le modal countdown
-      // je vais mettre la valeur false en le deployant sur le web
-      // et je vais changer la valeur à true pendant developpement
-      // dans le branche develop, cette valeur doit toujour etre true
-      isBlogReleased: true,
+      // je vais mettre la valeur false en le developpement sur le web
+      // et je vais changer la valeur à true en la deployant
+      // dans le branche develop, cette valeur doit toujour etre false
+      isBlogReleased: false,
     };
   },
   created() {
