@@ -2,6 +2,10 @@
   <div class="blogs-page-container">
     <BlogsTitle genre="Personal" />
     <BlogsListTest :articles="articles" />
+    <div class="introduction-links bottom">
+      <NuxtLink class="button--grey" to="/personal/">Go Back</NuxtLink>
+      <NuxtLink class="button--grey" to="/tech">Tech Page</NuxtLink>
+    </div>
   </div>
 </template>
 
@@ -25,5 +29,10 @@ export default {
   position: relative;
   margin: 3rem;
   padding: 3rem;
+}
+
+.introduction-links.bottom {
+  position: relative;
+  top: 40rem;
 }
 </style>

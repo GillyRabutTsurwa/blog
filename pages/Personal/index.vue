@@ -27,7 +27,7 @@
           <!-- cards navigation -->
           <template v-slot:nav="{ activeCardIndex, onNext, onPrevious }">
             <nav class="nav">
-              <div class="counter">{{activeCardIndex + 1}}/{{cards.length}}</div>
+              <div class="counter" style="text-align: center">{{activeCardIndex + 1}}/{{cards.length}}</div>
               <button v-on:click="onPrevious" class="button button__left">
                 <i class="fa fa-chevron-left" aria-hidden="true"></i>
               </button>
@@ -60,11 +60,23 @@ export default {
   data() {
     return {
       cards: [
-        { imgSrc: require("@/assets/img/card-pic-1.jpeg"), text: "Yo wagwhan" },
-        { imgSrc: require("@/assets/img/card-pic-2.jpeg"), text: "Yo wagwhan" },
-        { imgSrc: require("@/assets/img/card-pic-3.jpeg"), text: "Yo wagwhan" },
-        { imgSrc: require("@/assets/img/card-pic-4.jpeg"), text: "Yo wagwhan" },
-        { imgSrc: require("@/assets/img/card-pic-5.jpeg"), text: "Yo wagwhan" },
+        { imgSrc: require("@/assets/img/card-pic-1.jpeg"), text: "Ya boi posing for a pretty girl @ some resto in Northern MN." },
+        {
+          imgSrc: require("@/assets/img/card-pic-2.jpeg"),
+          text: "At the amusement park with trousers that were too tight. Gilbert's wild days; when I used to live in the edge.",
+        },
+        {
+          imgSrc: require("@/assets/img/card-pic-3.jpeg"),
+          text: "Chillin in DC. Had just tore a muscle the day prior. Despite the casual pose, the pain was real.",
+        },
+        {
+          imgSrc: require("@/assets/img/card-pic-4.jpeg"),
+          text: "Middle of the night coding usually goes well for me. Not this time. I was also going through a phase where I always stuck my pick in my hair.",
+        },
+        {
+          imgSrc: require("@/assets/img/card-pic-5.jpeg"),
+          text: "Football whilst in Uni. I loved those red and white addidas boots. But I jumped ship, I'm a Puma boy now.",
+        },
       ],
     };
   },
@@ -94,6 +106,10 @@ export default {
   border: 2px solid black;
   margin: 0 auto;
   background-color: rgb(238, 238, 238);
+}
+
+.card-img figcaption {
+  margin-top: 2rem;
 }
 
 .card-img img {
