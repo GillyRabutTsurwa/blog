@@ -19,7 +19,7 @@
     <hr>
 
     <div class="marquee">
-      <DynamicMarquee direction="row" v-bind:repeat="true" v-bind:hoverPause="true" v-bind:repeatMargin="5">
+      <DynamicMarquee direction="row" v-bind:repeat="false" v-bind:hoverPause="true">
         <ul class="marquee__inner">
           <li><i class="devicon-css3-plain"></i></li>
           <li><i class="devicon-javascript-plain"></i></li>
