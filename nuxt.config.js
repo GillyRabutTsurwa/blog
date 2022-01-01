@@ -4,14 +4,16 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "nuxt-content-blog-app",
+    title: "Gil's Blog Site",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
     link: [
+      // TODO: changer favicon
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+
       {
         rel: "stylesheet",
         href: "https://cdn.jsdelivr.net/gh/konpa/devicon@master/devicon.min.css"
@@ -65,5 +67,13 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {
+    postcss: {
+      preset: {
+        autoprefixer: {
+          grid: true
+        }
+      }
+    }
+  }
 };

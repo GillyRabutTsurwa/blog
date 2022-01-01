@@ -51,12 +51,12 @@
       </ul>
     </div>
     <div class="other-other">
-      <p>Powered by <span class="nuxt-icon">
+      <h6>Powered by <span class="nuxt-icon">
           <a href="https://nuxtjs.org" target="_blank">
             <i class="devicon-nuxtjs-plain"></i>
           </a>
         </span>
-      </p>
+      </h6>
     </div>
   </footer>
 </template>
@@ -67,6 +67,11 @@ export default {};
 
 <style>
 .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   position: fixed; /* je pourrais le changer plus tard */
   bottom: 0;
   width: 100%;
@@ -75,7 +80,7 @@ export default {};
   background-color: #1a2934;
   color: #eee;
   padding: 2rem;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 .footer .follow,
 .footer .other,

@@ -27,6 +27,9 @@ export default {
   display: grid;
   justify-content: space-between;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 40rem));
+  /* TESTINGTEMPORARY */
+  width: 80%;
+  margin: auto;
 }
 
 .blogs__list--item {

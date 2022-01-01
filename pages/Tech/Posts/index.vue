@@ -1,7 +1,17 @@
 <template>
   <div class="blogs-page-container">
     <BlogsTitle genre="Tech" />
-    <BlogsListTest :articles="articles" />
+    <!-- TESTINGTEMPORARY jusqu'a ce que j'ecrive des postes du tech -->
+    <div v-if="articles.length === 0" class="no-articles">
+      <h4>No Tech Posts Yet. Coming Very Soon</h4>
+      <img v-bind:src="require('@/assets/img/computer-don-meme.png')" alt="">
+      <div class="introduction-links">
+        <NuxtLink class="button--grey" to="/tech/">Go Back</NuxtLink>
+        <NuxtLink class="button--grey" to="/personal">Personal Page</NuxtLink>
+      </div>
+    </div>
+    <!--  -->
+    <BlogsListTest v-else :articles="articles" />
   </div>
 </template>
 
@@ -25,5 +35,19 @@ export default {
   position: relative;
   margin: 3rem;
   padding: 3rem;
+}
+
+/*  */
+.no-articles {
+  position: absolute;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.no-articles h4 {
+  margin: 4rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
 }
 </style>

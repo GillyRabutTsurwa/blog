@@ -4,8 +4,9 @@
     <img v-bind:src="require(`~/assets/img/${article.img}`)" v-bind:alt="article.title">
     <div class="blogs__list--item__authour">
       <h2 class="blogs__list--item__authour--title">{{truncateString(article.title, 15)}}</h2>
-      <p class="blogs__list--item__authour--name">by {{article.authour.name}}</p>
-      <p class="blogs__list--item__authour--description">{{truncateString(article.description, 20)}}</p>
+      <!-- je vais supprimer ce code dessous -->
+      <!-- <p class="blogs__list--item__authour--name">by {{article.authour.name}}</p> -->
+      <p class="blogs__list--item__authour--description">{{truncateString(article.description, 17)}}</p>
     </div>
   </NuxtLink>
 </template>

@@ -62,6 +62,7 @@ export default {
   font-weight: bold;
   text-decoration: none;
   transition: all 0.5s ease-in;
+  font-size: 2.77rem;
 }
 
 .prev-next .prev-next__link:hover,

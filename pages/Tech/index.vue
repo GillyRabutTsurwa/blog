@@ -19,7 +19,7 @@
     <hr>
 
     <div class="marquee">
-      <DynamicMarquee direction="row" v-bind:hoverPause="true" v-bind:repeatMargin="40">
+      <DynamicMarquee direction="row" v-bind:repeat="true" v-bind:hoverPause="true" v-bind:repeatMargin="5">
         <ul class="marquee__inner">
           <li><i class="devicon-css3-plain"></i></li>
           <li><i class="devicon-javascript-plain"></i></li>
@@ -65,8 +65,9 @@ export default {
 <style scoped>
 /* TESTING */
 p {
-  font-size: 2rem;
   width: 50%;
+  /* je override les declaration mise chez default.vue pour la taille de police */
+  font-size: 2.125rem;
 }
 
 .marquee {

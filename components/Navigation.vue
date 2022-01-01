@@ -6,63 +6,55 @@
     </label>
     <div class="navigation__background" v-bind:class="{fadeIn: isFadedInBg}">&nbsp;</div>
     <nav class="navigation__nav">
-      <!-- <ul class="navigation__nav--list">
-        <li class="navigation__nav--list-item"><a href="https://github.com/GillyRabutTsurwa" target="__blank" class="navigation__nav--list-link">Github Profile</a>
-        </li>
-        <li class="navigation__nav--list-item"><a href="./docs/GilbertRabutTsurwa-Résumé.docx" class="navigation__nav--list-link">Résumé</a></li>
-        <li class="navigation__nav--list-item"><a href="mailto:tsurwagilbert@gmail.com" class="navigation__nav--list-link">E-mail Me</a>
-        </li>
-        <li class="navigation__nav--list-item"><a href="#" class="navigation__nav--list-link">My Blog (Coming Soon)</a>
-        </li>
-      </ul> -->
       <div class="about-me">
-        <h2>About Me</h2>
-        <div>
+        <h2 class="about-me__title">About Me</h2>
+        <div class="about-me__bio">
           <p>
-            Yo (this is my blog and not my portfolio so I can be more informal here). My name is Gilbert, I am 24 years young, and I am a web developer. I am from Nairobi, Kenya (most of you don't know what a Kenya is), but I've lived in the United States for a while now. I currently reside in Virginia after moving from the tundraland that is Minnesota. I speak 3 languages: English, Swahili, and French. I am currently learning Spanish and considering to learn German further in the future. I have spent most of my life learning languages; coding and spoken languages alike.
+            Yo (this is my blog and not my portfolio so I can be more informal here). My name is Gilbert Rabut Tsurwa, I am 24 years young, and I am a web developer. I am from Nairobi, Kenya (most of you don't know what a Kenya is), but I've lived in the United States for a while now. I currently reside in Virginia after moving from the tundraland that is Minnesota. I speak 3 languages: English, Swahili, and French. I am currently learning Spanish and considering to learn German further in the future. I have spent most of my life learning languages; coding and spoken languages alike.
           </p>
           <p>I enjoy learning about web development -- particulary the front-end. You probably already knew that. I also enjoy playing football (the sport the weird ones call soccer), reading books and watching quirky funny comedy series; like Scrubs, Parks & Recreation, and Brooklyn Nine-Nine; just to name a few. I do like some anime as well, but most of it is too emotional for me. I also like long walks on the beach (this isn't a bio for a dating app, I promise you), long drives to natural sites and landmarks, and strolling around new places. Strolling > Hiking, but I am getting around to hiking. My favourite genres of music include lofi-beats, house, and vapourwave. I'll highly likely talk about music in future posts but to have an idea on what I like to listen, follow my on Spotify, the link will be below.
           </p>
           <p>
-            That's all I can think of saying for now. By the time you see this, this part of the bio will be changed by some things more relevant, of which I am having trouble thinking of at the moment. If you would like to get to know me and see my skills as a developer, consult my <a href="https://gilbertrabuttsurwa.tech" target="_blank">web portfolio</a>.
+            That's all I can think of saying for now. By the time you see this, this part of the bio will be changed by some things more relevant, of which I am having trouble thinking of at the moment. If you would like to get to know me and see my work as a developer, consult my <a class="portfolio-link" href="https://gilbertrabuttsurwa.tech" target="_blank">portfolio site</a>.
           </p>
-          <div>
-            Follow me on:
-            <ul class="social-icons-list">
-              <li class="follow__list--item">
-                <a href="https://www.facebook.com/rabuttsurwa/" target="_blank">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="follow__list--item">
-                <a href="https://www.instagram.com/rabuttsurwa96/" target="_blank">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="follow__list--item">
-                <a href="https://www.linkedin.com/in/gilberttsurwa/" target="_blank">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="other__list--item">
-                <a href="https://open.spotify.com/user/tsurwagilly" target="_blank">
-                  <i class="fa fa-spotify" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="other__list--item">
-                <a href="https://bandcamp.com/gtsurwa" target="_blank">
-                  <i class="fa fa-bandcamp" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="other__list--item">
-                <a href="https://soundcloud.com/tsurwagilly" target="_blank">
-                  <i class="fa fa-soundcloud" aria-hidden="true"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-
         </div>
+
+        <div class="about-me__socials">
+          <span>Follow me on:</span>
+          <ul class="social-icons-list">
+            <li class="follow__list--item">
+              <a href="https://www.facebook.com/rabuttsurwa/" target="_blank">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="follow__list--item">
+              <a href="https://www.instagram.com/rabuttsurwa96/" target="_blank">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="follow__list--item">
+              <a href="https://www.linkedin.com/in/gilberttsurwa/" target="_blank">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="other__list--item">
+              <a href="https://open.spotify.com/user/tsurwagilly" target="_blank">
+                <i class="fa fa-spotify" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="other__list--item">
+              <a href="https://bandcamp.com/gtsurwa" target="_blank">
+                <i class="fa fa-bandcamp" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li class="other__list--item">
+              <a href="https://soundcloud.com/tsurwagilly" target="_blank">
+                <i class="fa fa-soundcloud" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </nav>
   </div>
@@ -74,6 +66,7 @@ export default {
     return {
       isFadedInBtn: false,
       isFadedInBg: false,
+      isPulsating: false,
     };
   },
   mounted() {
@@ -83,6 +76,9 @@ export default {
     setTimeout(() => {
       this.isFadedInBg = true;
     }, 3600);
+    setInterval(() => {
+      this.isPulsating = !this.isPulsating;
+    }, 2000);
   },
 };
 </script>
@@ -163,15 +159,61 @@ export default {
   color: #fff;
 }
 
-.navigation .about-me h2 {
+/* .navigation .about-me {
   align-self: center;
+} */
+
+.navigation .about-me__title {
+  /* align-self: center; */
   font-size: 9rem;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 
-.navigation .about-me p {
+.navigation .about-me__socials {
+  grid-column: 2 / -1;
+  grid-row: 2 / 3;
+}
+
+.navigation .about-me__socials span {
+  font-size: 3rem;
+}
+
+.navigation .about-me__socials ul {
+  display: flex;
+  margin-top: 4rem;
+}
+.navigation .about-me__socials li {
+  font-size: 5rem;
+  margin: 0 1.5rem;
+}
+.navigation .about-me__socials li:nth-child(odd) {
+  margin-bottom: 5rem;
+}
+.navigation .about-me__socials li:nth-child(even) {
+  margin-top: 5rem;
+}
+
+.navigation .about-me__bio {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.navigation .about-me__bio p {
   font-size: 2rem;
   padding: 3rem;
   text-align: left;
+}
+
+.navigation .about-me__bio p .portfolio-link:link,
+.navigation .about-me__bio p .portfolio-link:visited {
+  font-weight: bold;
+  transition: all 0.5s ease-out;
+}
+
+.navigation .about-me__bio p .portfolio-link:hover,
+.navigation .about-me__bio p .portfolio-link:active {
+  text-decoration: underline;
 }
 
 /* removed */

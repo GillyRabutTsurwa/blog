@@ -30,7 +30,7 @@ export default {
   position: absolute;
   top: 2rem;
   right: 2rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .blogs-page-title,

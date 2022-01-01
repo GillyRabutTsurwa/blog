@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- je vais enlever la verficication isBlogReleased quand le blog est pret pour deployer officiellement -->
-    <Navigation v-if="$nuxt.$route.path === '/' && isBlogReleased" />
-    <Modal v-if="!isBlogReleased" />
-    <Nuxt v-else-if="isBlogReleased" />
+    <Navigation v-if="$nuxt.$route.path === '/' && isUnderConstruction" />
+    <Modal v-if="!isUnderConstruction" />
+    <Nuxt v-else-if="isUnderConstruction" />
   </div>
 </template>
 
@@ -17,7 +17,7 @@ export default {
       // je vais mettre la valeur false en le developpement sur le web
       // et je vais changer la valeur à true en la deployant
       // dans le branche develop, cette valeur doit toujour etre false
-      isBlogReleased: false,
+      isUnderConstruction: true,
     };
   },
   created() {
@@ -49,6 +49,20 @@ html {
 body {
   font-size: 1.6rem;
   background-color: #efeceb;
+}
+
+p {
+  line-height: 1.5;
+  font-size: 2rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  all: unset;
+  cursor: pointer;
 }
 
 .button--green {
@@ -83,9 +97,12 @@ body {
 .introduction-title {
   text-align: center;
   font-size: 4rem;
+  margin-top: 1.5rem;
 }
 
+.introduction-title.personal,
 .introduction-title.tech {
+  margin-bottom: 2.5rem;
   background-image: linear-gradient(to bottom right, #1a2934, #618299);
   color: transparent;
   background-clip: text;
@@ -93,10 +110,13 @@ body {
 }
 
 .introduction-paragraph {
-  margin: 0 0 1.5rem 3rem;
+  /* margin: 0 0 1.5rem 3rem; */
+  margin: 1.5rem auto;
   padding-left: 2rem;
   border-left: 0.25rem solid transparent;
   transition: border-left 0.5s ease-in;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 .introduction-paragraph:not(:nth-of-type(2)):hover {
