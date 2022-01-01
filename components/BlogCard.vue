@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     postCategory() {
-      return this.article.path.includes("tech") ? "tech" : "personal";
+      return this.article.path === "tech" ? "tech" : "personal";
     },
   },
   methods: {
@@ -31,6 +31,7 @@ export default {
   },
   created() {
     console.log(this.article);
+    console.log(this.postCategory);
   },
 };
 </script>

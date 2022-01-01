@@ -2,7 +2,7 @@
   <div class="blogs-page-container">
     <BlogsTitle genre="Tech" />
     <!-- TESTINGTEMPORARY jusqu'a ce que j'ecrive des postes du tech -->
-    <div v-if="articles.length === 0" class="no-articles">
+    <div v-if="articles.length === 1" class="no-articles">
       <h4>No Tech Posts Yet. Coming Very Soon</h4>
       <img v-bind:src="require('@/assets/img/computer-don-meme.png')" alt="">
       <div class="introduction-links">
