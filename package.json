@@ -1,30 +1,17 @@
 {
-  "name": "nuxt-content-blog-app",
-  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "dev": "nuxt dev",
+    "dev:https": "nuxt dev --https --ssl-cert ~/localhost.pem --ssl-key ~/localhost-key.pem",
     "generate": "nuxt generate",
-    "test": "jest"
-  },
-  "dependencies": {
-    "@nuxt/content": "^1.14.0",
-    "@nuxtjs/pwa": "^3.3.5",
-    "@nuxtjs/tailwindcss": "^4.2.1",
-    "core-js": "^3.9.1",
-    "nuxt": "^2.15.3",
-    "vue-card-stack": "^1.3.1",
-    "vue-dynamic-marquee": "^0.1.7",
-    "vue-gtag": "^1.16.1"
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.1.3",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^26.6.3",
-    "jest": "^26.6.3",
-    "postcss": "^8.2.8",
-    "vue-jest": "^3.0.4"
+    "nuxt": "3.0.0-rc.9"
+  },
+  "dependencies": {
+    "@storyblok/nuxt": "^4.3.0"
   }
 }

@@ -13,6 +13,7 @@ jest.config.js
 package-lock.json
 .editorconfig
 .babelrc
+.env
 
 
 # Runtime data
