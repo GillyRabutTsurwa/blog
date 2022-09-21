@@ -12,17 +12,17 @@
       </NuxtLink>
     </div>
   </div>
-
 </template>
 
 <script setup>
-defineProps({
+const props = defineProps({
   blok: {
     type: Object,
   },
 });
+console.log(props);
 // TESTING:
-const myClasses = ["personal", "tech"];
+const myClasses = ["tech", "personal"];
 </script>
 
 <style>
@@ -69,12 +69,12 @@ const myClasses = ["personal", "tech"];
   transition: all 0.5s ease;
 }
 
-.personal {
+.tech {
   border-right: 0.5rem black solid;
   grid-column: 1 / 2;
 }
 
-.tech {
+.personal {
   border-left: 0.5rem black solid;
   grid-column: 2 / 3;
 }

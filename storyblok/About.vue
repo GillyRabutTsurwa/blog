@@ -1,16 +1,12 @@
 <template>
-  <div>
-    <div v-editable="blok" class="about">
-      <!-- <StoryblokComponent v-for="blok in blok.columns" :key="blok._uid" :blok="blok" /> -->
-      <h3>{{blok.titre}}</h3>
-      <p>{{blok.paragraphOne}}</p>
-      <p>{{blok.paragraphTwo}}</p>
-      <p>{{blok.paragraphThree}}</p>
-      <a :href="blok.button.url">x</a>
+  <div v-editable="blok" class="about">
+    <h3>{{blok.titre}}</h3>
 
-      <p></p>
+    <p v-for="(currentParagraph, property) in state.para" :key="property">
+      {{currentParagraph}}
+    </p>
 
-    </div>
+    <a :href="blok.button.url">x</a>
   </div>
 </template>
 
@@ -21,7 +17,15 @@ const props = defineProps({
   },
 });
 console.log(props);
+
+const state = reactive({
+  para: {},
+});
+const paragraphs = Object.entries(props.blok).filter((currentArray) => currentArray[0].includes("paragraph"));
+console.log(paragraphs);
+state.para = Object.fromEntries(paragraphs);
+console.log(state.para);
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 </style>

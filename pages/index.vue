@@ -1,11 +1,11 @@
 <template>
   <StoryblokComponent v-if="story" :blok="story.content" />
-  <!-- <h4>test</h4>
-  <pre>{{story.content}}</pre> -->
 </template>
 
 <script setup>
 const story = await useStoryblok("home", { version: "draft" });
+// const stories = await useStoryblokApi("cdn/stories"); TESTING
+
 console.log(story);
 </script>
 

@@ -16,6 +16,12 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
 html {
   font-family: Alegreya Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 62.5%;
@@ -30,6 +36,7 @@ html {
 body {
   font-size: 1.6rem;
   background-color: #efeceb;
+  overflow-x: hidden;
 }
 
 p {
