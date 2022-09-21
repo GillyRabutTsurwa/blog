@@ -3,9 +3,7 @@
 </template>
 
 <script setup>
-const story = await useStoryblok("home", { version: "draft" });
-// const stories = await useStoryblokApi("cdn/stories"); TESTING
-
+const story = await useStoryblok("tech", { version: "draft" });
 console.log(story);
 </script>
 

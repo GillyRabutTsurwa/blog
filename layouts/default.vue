@@ -1,38 +1,25 @@
 <template>
   <div>
-    <!-- je vais enlever la verficication isBlogReleased quand le blog est pret pour deployer officiellement -->
-    <Navigation v-if="$nuxt.$route.path === '/' && isUnderConstruction" />
-    <Modal v-if="!isUnderConstruction" />
-    <Nuxt v-else-if="isUnderConstruction" />
+    <slot />
   </div>
 </template>
-
-<script>
-import Modal from "~/components/Modal.vue";
-export default {
-  components: { Modal },
-  data() {
-    return {
-      // changer cette valeur pour afficher et cacher le modal countdown
-      // je vais mettre la valeur false en le developpement sur le web
-      // et je vais changer la valeur à true en la deployant
-      // dans le branche develop, cette valeur doit toujour etre false
-      isUnderConstruction: true,
-    };
-  },
-  created() {
-    console.log(this.$nuxt.$route.path);
-  },
-};
+  
+  <script setup>
 </script>
-
-<style>
+  
+  <style>
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 html {
@@ -49,6 +36,7 @@ html {
 body {
   font-size: 1.6rem;
   background-color: #efeceb;
+  overflow-x: hidden;
 }
 
 p {
@@ -134,3 +122,4 @@ a {
   margin: 0 1.5rem;
 }
 </style>
+  
