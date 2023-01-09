@@ -1,11 +1,8 @@
 <template>
   <div v-editable="blok" class="container">
-    <!-- <StoryblokComponent v-for="blok in blok.columns" :key="blok._uid" :blok="blok" />
-    <pre>{{blok}}</pre> -->
-
     <div v-for="(currentBlok, index) in blok.image" :key="currentBlok.id" :class="myClasses[index]">
       <div :class="`${myClasses[index]}__img`">
-        <img :src="currentBlok.filename" alt="currentBlok.alt" />
+        <img :src="currentBlok.filename" :alt="currentBlok.alt" />
       </div>
       <NuxtLink to="/personal" :class="`${myClasses[index]}__link`">
         <span :class="`${myClasses[index]}__link--text`">{{myClasses[index]}}</span>
@@ -21,6 +18,7 @@ const props = defineProps({
   },
 });
 console.log(props);
+console.log(props.blok);
 // TESTING:
 const myClasses = ["tech", "personal"];
 </script>

@@ -5,24 +5,24 @@
     </div>
 
     <div class="blog-content">
-      <!-- <NuxtLink v-bind:to="`/${dynamicBackLink}/posts`" class="link-back">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-      </NuxtLink> -->
-
       <h1 class="blog-content__title">{{blok.blogTitle}}</h1>
-      <!-- <p class="blog-content__description">{{blok.paragraphOne}}</p>
-      <p class="blog-content__description">{{blok.paragraphTwo}}</p>
-      <p class="blog-content__description">{{blok.paragraphThree}}</p> -->
-      <p v-for="(currentParagraph, property) in state.para" :key="property" class="blog-content__description">
+      <h3 class="blog-content__date-published"><span>Date Published: </span>{{formatDate(blok.dateCreated) || formatDate(blok.datePublished) }}</h3>
+      <!-- <p v-for="(currentParagraph, property) in paras" :key="property" class="blog-content__description">
         {{currentParagraph}}
-      </p>
-      <!-- <p class="blog-content__date">Post Created: {{formatDate(article.createdAt)}}</p> -->
+      </p> -->
+      <div v-for="(currentParagraph, property) in paras" :key="property" class="blog-content__description">
+        <RichTextRenderer :document="currentParagraph.content"></RichTextRenderer>
+      </div>
+      <!-- <pre>{{blok.content}}</pre> -->
+      <!-- <pre>{{paras}}</pre> -->
     </div>
   </article>
 
 </template>
   
 <script setup>
+import { RichTextRenderer } from "@marvr/storyblok-rich-text-vue-renderer";
+import { computed } from "vue";
 const props = defineProps({
   blok: {
     type: Object,
@@ -30,14 +30,20 @@ const props = defineProps({
 });
 console.log(props);
 
-const state = reactive({
-  para: {},
-});
-const paragraphs = Object.entries(props.blok).filter((currentArray) => currentArray[0].includes("paragraph"));
-console.log(paragraphs);
-state.para = Object.fromEntries(paragraphs);
-console.log(state.para);
+// const paragraphs = Object.entries(props.blok).filter((currentArray) => currentArray[0].includes("paragraph"));
+// console.log(paragraphs);
+// state.para = Object.fromEntries(paragraphs);
+// console.log(state.para);
 
+const paras = computed(() => {
+  const paragraphs = Object.entries(props.blok).filter((currentArray) => currentArray[0].includes("paragraph"));
+  return Object.fromEntries(paragraphs);
+});
+
+console.log(paras);
+console.log(paras.value);
+
+//TODO: put this into a composable. as I'm using it elsewhere
 const formatDate = (currentDate) => {
   const options = {
     year: "numeric",
@@ -84,12 +90,18 @@ const formatDate = (currentDate) => {
 .blog-content__title {
   font-weight: bolder;
   font-size: 5rem;
-  margin: 4.5rem 0;
+  margin: 4.5rem 0 1rem 0;
+}
+
+.blog-content__date-published {
+  font-style: italic;
+  color: #888;
+  font-weight: normal;
 }
 
 .blog-content__description {
   font-size: 2.25rem;
-  margin-bottom: 2rem;
+  margin: 3rem 0;
   line-height: 1.5;
 }
 
@@ -119,4 +131,4 @@ const formatDate = (currentDate) => {
 }
 </style>
 
-/*  */
+/* */

@@ -12,6 +12,7 @@ console.log(story);
 /**
  * NOTEIMPORTANT: @ line 3, instead of using the story.content object, I am passing, to my storyblok components, some more data I'd like to use.
  * to do this, I created a new object with the approriate information destructured in a new object, which also has the original information destructured
+ * i will be copying this everywhere else it is needed and refactor later
  */
 const { created_at, first_published_at, slug, full_slug } = story.value;
 const metaData = {
