@@ -1,7 +1,8 @@
 import blockContent from './blockContent'
 import category from './category'
+import author from './author'
 import personal from './posts/personal'
 import tech from './posts/tech'
-import author from './author'
+import homeGrid from './homeGrid'
 
-export const schemaTypes = [personal, tech, author, category, blockContent]
+export const schemaTypes = [homeGrid, personal, tech, author, category, blockContent]
