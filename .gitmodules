@@ -1,0 +1,6 @@
+[submodule "api"]
+	path = api
+	url = git@github.com:GillyRabutTsurwa/blog-studio.git
+[submodule "frontend"]
+	path = frontend
+	url = git@github.com:GillyRabutTsurwa/blog-frontend.git
